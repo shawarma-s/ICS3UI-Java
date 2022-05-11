@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class area_and_perimeter {
 
+    static Scanner userin = new Scanner(System.in);
+
     static  String choice;
     static  String perimeterChoice;
     static  String areaChoice;
@@ -12,8 +14,10 @@ public class area_and_perimeter {
     static  double lengthRectangle;
 
     public static void main(String[] args) {
+        mainMenu();
+    }
 
-        Scanner userin = new Scanner(System.in);
+    public static void mainMenu() {
 
         System.out.println("Welcome to the calculator. What would you like to calculate?\n");
         System.out.println("A) Perimeter\nB) Area\nC) Volume\nD) Exit");
@@ -21,19 +25,9 @@ public class area_and_perimeter {
         choice = userin.next();
 
         if (choice.equals("Perimeter") || choice.equals("perimeter") || choice.equals("a") || choice.equals("A")) {
-
-            System.out.println("What shape would you like to calculate the perimeter of?");
-            System.out.println("A) Rectangle\nB) Square\nC) Circle\nD) Triangle");
-            perimeterChoice = userin.next();
-
-            if (perimeterChoice.equals("Rectangle") || perimeterChoice.equals("rectangle") || perimeterChoice.equals("a") || perimeterChoice.equals("A")) {
-                rectanglePerimeter();
-            }
-            else if (perimeterChoice.equals("Square") || perimeterChoice.equals("square") || perimeterChoice.equals("b") || perimeterChoice.equals("B")){
-                squarePerimter();
-            }
+            perimeter();
         }
-        else if (choice.equals("Perimeter") || choice.equals("perimeter") || choice.equals("b") || choice.equals("B")) {
+        else if (choice.equals("Area") || choice.equals("area") || choice.equals("b") || choice.equals("B")) {
 
             System.out.println("What shape would you like to calculate the perimeter of?");
             System.out.println("A) Rectangle\nB) Square\nC) Circle\nD) Triangle");
@@ -44,10 +38,38 @@ public class area_and_perimeter {
             }
         }
         else {
-            System.out.println("Invalid input, exiting program.");
-            System.exit(0);
+            System.out.println("Invalid input, please try again.");
+            mainMenu();
         }
     }
+
+    public static void perimeter() {
+
+        System.out.println("What shape would you like to calculate the perimeter of?");
+        System.out.println("A) Rectangle\nB) Square\nC) Circle\nD) Triangle");
+        perimeterChoice = userin.next();
+
+        if (perimeterChoice.equals("Rectangle") || perimeterChoice.equals("rectangle") || perimeterChoice.equals("a") || perimeterChoice.equals("A")) {
+            rectanglePerimeter();
+        }
+        else if (perimeterChoice.equals("Square") || perimeterChoice.equals("square") || perimeterChoice.equals("b") || perimeterChoice.equals("B")){
+            squarePerimter();
+        }
+        else if (perimeterChoice.equals("Circle") || perimeterChoice.equals("circle") || perimeterChoice.equals("c") || perimeterChoice.equals("C")){
+            circlePerimeter();
+        }
+        else if (perimeterChoice.equals("Triangle") || perimeterChoice.equals("triangle") || perimeterChoice.equals("d") || perimeterChoice.equals("D")){
+            circlePerimeter();
+        }
+        else {
+            System.out.println("Invalid input, please try again.");
+            perimeter();
+        }
+    }
+
+    public static void area() {}
+
+    public static void volume() {}
 
     public static double rectanglePerimeter() {
 
