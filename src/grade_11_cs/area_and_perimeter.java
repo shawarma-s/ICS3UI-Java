@@ -28,14 +28,13 @@ public class area_and_perimeter {
             perimeter();
         }
         else if (choice.equals("Area") || choice.equals("area") || choice.equals("b") || choice.equals("B")) {
-
-            System.out.println("What shape would you like to calculate the perimeter of?");
-            System.out.println("A) Rectangle\nB) Square\nC) Circle\nD) Triangle");
-            perimeterChoice = userin.next();
-
-            if (perimeterChoice.equals("Rectangle") || perimeterChoice.equals("rectangle") || perimeterChoice.equals("a") || perimeterChoice.equals("A")) {
-
-            }
+            area();
+        }
+        else if (choice.equals("Volume") || choice.equals("volume") || choice.equals("c") || choice.equals("C")) {
+            volume();
+        }
+        else if (choice.equals("Exit") || choice.equals("exit") || choice.equals("d") || choice.equals("D")) {
+            System.exit(0);
         }
         else {
             System.out.println("Invalid input, please try again.");
@@ -59,7 +58,7 @@ public class area_and_perimeter {
             circlePerimeter();
         }
         else if (perimeterChoice.equals("Triangle") || perimeterChoice.equals("triangle") || perimeterChoice.equals("d") || perimeterChoice.equals("D")){
-            circlePerimeter();
+            trianglePerimeter();
         }
         else {
             System.out.println("Invalid input, please try again.");
@@ -67,7 +66,29 @@ public class area_and_perimeter {
         }
     }
 
-    public static void area() {}
+    public static void area() {
+
+        System.out.println("What shape would you like to calculate the perimeter of?");
+        System.out.println("A) Rectangle\nB) Square\nC) Circle\nD) Triangle");
+        areaChoice = userin.next();
+
+        if (areaChoice.equals("Rectangle") || areaChoice.equals("rectangle") || areaChoice.equals("a") || areaChoice.equals("A")) {
+            rectanglePerimeter();
+        }
+        else if (perimeterChoice.equals("Square") || perimeterChoice.equals("square") || perimeterChoice.equals("b") || perimeterChoice.equals("B")){
+            squarePerimter();
+        }
+        else if (perimeterChoice.equals("Circle") || perimeterChoice.equals("circle") || perimeterChoice.equals("c") || perimeterChoice.equals("C")){
+            circlePerimeter();
+        }
+        else if (perimeterChoice.equals("Triangle") || perimeterChoice.equals("triangle") || perimeterChoice.equals("d") || perimeterChoice.equals("D")){
+            trianglePerimeter();
+        }
+        else {
+            System.out.println("Invalid input, please try again.");
+            area();
+        }
+    }
 
     public static void volume() {}
 
