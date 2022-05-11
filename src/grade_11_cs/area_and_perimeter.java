@@ -1,9 +1,6 @@
 package grade_11_cs;
 
-import java.nio.channels.ShutdownChannelGroupException;
 import java.util.Scanner;
-
-import static java.lang.System.exit;
 
 public class area_and_perimeter {
 
@@ -15,10 +12,6 @@ public class area_and_perimeter {
     static  double lengthRectangle;
 
     public static void main(String[] args) {
-        mainMenu();
-    }
-
-    public static void mainMenu() {
 
         Scanner userin = new Scanner(System.in);
 
@@ -30,18 +23,20 @@ public class area_and_perimeter {
         if (choice.equals("Perimeter") || choice.equals("perimeter") || choice.equals("a") || choice.equals("A")) {
 
             System.out.println("What shape would you like to calculate the perimeter of?");
-            System.out.println("A) Rectangle\nB) Square\nC) Circle");
+            System.out.println("A) Rectangle\nB) Square\nC) Circle\nD) Triangle");
             perimeterChoice = userin.next();
 
             if (perimeterChoice.equals("Rectangle") || perimeterChoice.equals("rectangle") || perimeterChoice.equals("a") || perimeterChoice.equals("A")) {
-
+                rectanglePerimeter();
+            }
+            else if (perimeterChoice.equals("Square") || perimeterChoice.equals("square") || perimeterChoice.equals("b") || perimeterChoice.equals("B")){
+                squarePerimter();
             }
         }
-
-        else if (choice.equals("Perimeter") || choice.equals("perimeter") || choice.equals("a") || choice.equals("A")) {
+        else if (choice.equals("Perimeter") || choice.equals("perimeter") || choice.equals("b") || choice.equals("B")) {
 
             System.out.println("What shape would you like to calculate the perimeter of?");
-            System.out.println("A) Rectangle\nB) Square\nC) Circle");
+            System.out.println("A) Rectangle\nB) Square\nC) Circle\nD) Triangle");
             perimeterChoice = userin.next();
 
             if (perimeterChoice.equals("Rectangle") || perimeterChoice.equals("rectangle") || perimeterChoice.equals("a") || perimeterChoice.equals("A")) {
@@ -53,4 +48,65 @@ public class area_and_perimeter {
             System.exit(0);
         }
     }
+
+    public static double rectanglePerimeter() {
+
+        return 0;
+    }
+
+    public static double squarePerimter() {
+
+        return 0;
+    }
+
+    public static double circlePerimeter() {
+
+        return 0;
+    }
+
+    public static double trianglePerimeter() {
+
+        return 0;
+    }
+
+    public static double rectangleArea() {
+
+        return 0;
+    }
+
+    public static double squareArea() {
+
+        return 0;
+    }
+
+    public static double circleArea() {
+
+        return 0;
+    }
+
+    public static double triangleArea() {
+
+        return 0;
+    }
+
+    public static double rectanglePrism() {
+
+        return 0;
+    }
+
+    public static double cube() {
+
+        return 0;
+    }
+
+    public static double sphere() {
+
+        return 0;
+    }
+
+    public static double trianglePrism() {
+
+        return 0;
+    }
+
 }
