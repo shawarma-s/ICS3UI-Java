@@ -13,7 +13,7 @@ public class area_and_perimeter {
     static String perimeterChoice;
     static String areaChoice;
     static String volumeChoice;
-    final static double PI = 3.14; //constant for PI
+    final static double PI = 3.141592; //constant for PI
     static double widthRectangle; //double variables for user defined choices in dimensions used in calculations
     static double lengthRectangle;
     static double heightRectangle;
@@ -129,6 +129,7 @@ public class area_and_perimeter {
                 System.out.println("Please enter the size of the height of the triangle:");
                 heightTriangle = userin.nextDouble();
                 System.out.println("The area of this triangle is " + triangleArea(baseTriangle, heightTriangle) + unit);
+                mainMenu();
             }
             case "Exit", "exit", "e", "E" -> System.exit(0); //exit if user chooses
             default -> {
@@ -143,11 +144,38 @@ public class area_and_perimeter {
         System.out.println("A) Rectangular Prism\nB) Cube\nC) Sphere\nD) Triangular Prism\nE) Exit"); //options for volume menu
         volumeChoice = userin.next();
 
-        switch (volumeChoice) {
-            case "Rectangular Prism", "rectangular prism", "a", "A" -> rectanglePrism(); //4 shapes for volume
-            case "Cube", "cube", "b", "B" -> cube();
-            case "Sphere", "sphere", "c", "C" -> sphere();
-            case "Triangular Prism", "triangular prism", "d", "D" -> trianglePrism();
+        switch (volumeChoice) { //4 shapes for volume
+            case "Rectangular Prism", "rectangular prism", "a", "A" -> {
+                System.out.println("Please enter the length of the rectangular prism:");
+                lengthRectangle = userin.nextDouble();
+                System.out.println("Please enter the width of the rectangular prism:");
+                widthRectangle = userin.nextDouble();
+                System.out.println("Please enter the height of the rectangular prism:");
+                heightRectangle = userin.nextDouble();
+                System.out.println("The volume of this rectangular prism is " + rectanglePrism(lengthRectangle, widthRectangle, heightRectangle) + unit);
+                mainMenu();
+            }
+            case "Cube", "cube", "b", "B" -> {
+                System.out.println("Please enter the width of the cube:");
+                widthSquare = userin.nextDouble();
+                System.out.println("The volume of this cube is " + cube(widthSquare) + unit);
+                mainMenu();
+            }
+            case "Sphere", "sphere", "c", "C" -> {
+                System.out.println("Please enter the radius of the sphere:");
+                radius = userin.nextDouble();
+                System.out.println("The volume of this sphere is " + sphere(radius) + unit);
+                mainMenu();
+            }
+            case "Triangular Prism", "triangular prism", "d", "D" -> {
+                System.out.println("Please enter the size of the base of the triangle face of the triangular prism:");
+                baseTriangle = userin.nextDouble();
+                System.out.println("Please enter the size of the height of the triangle face of the triangular prism:");
+                heightTriangle = userin.nextDouble();
+                System.out.println("Please enter the length of the triangular prism:");
+                lengthTriangle = userin.nextDouble();
+                System.out.println("The volume of this triangular prism is " + trianglePrism(baseTriangle, heightTriangle, lengthTriangle) + unit);
+            }
             case "Exit", "exit", "e", "E" -> System.exit(0); //exit if user chooses
             default -> {
                 System.out.println("Invalid input, please try again"); //loops volume menu if input is invalid
@@ -157,6 +185,7 @@ public class area_and_perimeter {
     }
 
     //below are the functions for the calculations for all possible shape selections
+    //function parameters are not named because equations are written in a way that order does not affect outcome (trianglePrism is an exception)
     public static double rectanglePerimeter(double n1, double n2) {
         double rectanglePerimeter = 2*n1+2*n2;
         return rectanglePerimeter;
@@ -182,11 +211,11 @@ public class area_and_perimeter {
     }
 
     public static double squareArea(double n1) {
-        return n1*n1;
+        return Math.pow(n1,2);
     }
 
     public static double circleArea(double n1) {
-        return PI*(n1*n1);
+        return PI*(Math.pow(n1,2));
     }
 
     public static double triangleArea(double n1, double n2) {
@@ -194,23 +223,19 @@ public class area_and_perimeter {
     }
 
     public static double rectanglePrism(double n1, double n2, double n3) {
-        double rectanglePrism;
-        return rectanglePrism;
+        return n1*n2*n3;
     }
 
     public static double cube(double n1) {
-        double cube;
-        return cube;
+        return Math.pow(n1,3);
     }
 
     public static double sphere(double n1) {
-        double sphere;
-        return sphere;
+        return (4/3)*PI*(Math.pow(n1, 3));
     }
 
-    public static double trianglePrism(double n1, double n2, double n3) {
-        double trianglePrism;
-        return trianglePrism;
+    public static double trianglePrism(double base, double height, double length) {
+        return (base*height/2)*length;
     }
 
 }
