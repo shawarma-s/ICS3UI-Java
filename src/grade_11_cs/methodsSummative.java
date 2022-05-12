@@ -2,7 +2,7 @@ package grade_11_cs;
 
 import java.util.Scanner;
 
-public class area_and_perimeter {
+public class methodsSummative {
 
     //static used to make scanner available in all methods
     static Scanner userin = new Scanner(System.in);
