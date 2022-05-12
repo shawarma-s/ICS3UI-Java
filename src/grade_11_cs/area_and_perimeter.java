@@ -59,7 +59,7 @@ public class area_and_perimeter {
                 lengthRectangle = userin.nextDouble();
                 System.out.println("Please enter the width of the rectangle:");
                 widthRectangle = userin.nextDouble();
-                System.out.println("The area of this rectangle is " + rectanglePerimeter(lengthRectangle, widthRectangle )); //4 options for shape perimeters
+                System.out.println("The area of this rectangle is " + rectanglePerimeter(lengthRectangle, widthRectangle)); //4 options for shape perimeters
             }
             case "Square", "square", "b", "B" -> squarePerimter();
             case "Circle", "circle", "c", "C" -> circlePerimeter();
@@ -114,57 +114,57 @@ public class area_and_perimeter {
         return rectanglePerimeter;
     }
 
-    public static double squarePerimter() {
+    public static double squarePerimter(double n1, double n2) {
         double squarePerimeter;
         return squarePerimeter;
     }
 
-    public static double circlePerimeter() { //aka circumference
+    public static double circlePerimeter(double n1, double n2) { //aka circumference
         double circlePerimeter;
         return circlePerimeter;
     }
 
-    public static double trianglePerimeter() {
+    public static double trianglePerimeter(double n1, double n2) {
         double trianglePerimeter;
         return trianglePerimeter;
     }
 
-    public static double rectangleArea() {
+    public static double rectangleArea(double n1, double n2) {
         double rectangleArea;
         return rectangleArea;
     }
 
-    public static double squareArea() {
+    public static double squareArea(double n1, double n2) {
         double squareArea;
         return squareArea;
     }
 
-    public static double circleArea() {
+    public static double circleArea(double n1, double n2) {
         double circleArea;
         return circleArea;
     }
 
-    public static double triangleArea() {
+    public static double triangleArea(double n1, double n2) {
         double triangleArea;
         return triangleArea;
     }
 
-    public static double rectanglePrism() {
+    public static double rectanglePrism(double n1, double n2) {
         double rectanglePrism;
         return rectanglePrism;
     }
 
-    public static double cube() {
+    public static double cube(double n1, double n2) {
         double cube;
         return cube;
     }
 
-    public static double sphere() {
+    public static double sphere(double n1, double n2) {
         double sphere;
         return sphere;
     }
 
-    public static double trianglePrism() {
+    public static double trianglePrism(double n1, double n2) {
         double trianglePrism;
         return trianglePrism;
     }
