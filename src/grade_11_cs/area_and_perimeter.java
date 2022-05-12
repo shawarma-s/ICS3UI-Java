@@ -8,10 +8,11 @@ public class area_and_perimeter {
     static Scanner userin = new Scanner(System.in);
 
     //static used to make variables available in all methods
-    static  String choice; //string variables for user defined choices in different procedures
-    static  String perimeterChoice;
-    static  String areaChoice;
-    static  String volumeChoice;
+    static String unit;
+    static String choice; //string variables for user defined choices in different procedures
+    static String perimeterChoice;
+    static String areaChoice;
+    static String volumeChoice;
     final static double PI = 3.14; //constant for PI
     static double widthRectangle; //double variables for user defined choices in dimensions used in calculations
     static double lengthRectangle;
@@ -26,6 +27,8 @@ public class area_and_perimeter {
     static double lengthTriangle; //used for triangular prism
 
     public static void main(String[] args) {
+        System.out.println("Please enter the unit (cm, m, km, etc.) that you would like to use:");
+        unit = userin.next();
         mainMenu();
     }
 
@@ -60,17 +63,20 @@ public class area_and_perimeter {
                 lengthRectangle = userin.nextDouble();
                 System.out.println("Please enter the width of the rectangle:");
                 widthRectangle = userin.nextDouble();
-                System.out.println("The perimeter of this rectangle is " + rectanglePerimeter(lengthRectangle, widthRectangle));
+                System.out.println("The perimeter of this rectangle is " + rectanglePerimeter(lengthRectangle, widthRectangle) + unit);
+                mainMenu();
             }
             case "Square", "square", "b", "B" -> {
                 System.out.println("Please enter the width of the square:");
                 widthSquare = userin.nextDouble();
-                System.out.println("The perimeter of this square is " + squarePerimeter(widthSquare));
+                System.out.println("The perimeter of this square is " + squarePerimeter(widthSquare) + unit);
+                mainMenu();
             }
             case "Circle", "circle", "c", "C" -> {
                 System.out.println("Please enter the radius of the circle:");
                 radius = userin.nextDouble();
-                System.out.println("The circumference of this circle is " + circlePerimeter(radius));
+                System.out.println("The circumference of this circle is " + circlePerimeter(radius) + unit);
+                mainMenu();
             }
             case "Triangle", "triangle", "d", "D" -> {
                 System.out.println("Please enter the length of the first side of the triangle:");
@@ -79,7 +85,8 @@ public class area_and_perimeter {
                 triangleSideB = userin.nextDouble();
                 System.out.println("Please enter the length of the third side of the triangle:");
                 triangleSideC = userin.nextDouble();
-                System.out.println("The perimeter of this triangle is " + trianglePerimeter(triangleSideA, triangleSideB, triangleSideC));
+                System.out.println("The perimeter of this triangle is " + trianglePerimeter(triangleSideA, triangleSideB, triangleSideC) + unit);
+                mainMenu();
             }
             case "Exit", "exit", "e", "E" -> System.exit(0); //exits if user chooses
             default -> {
@@ -101,15 +108,28 @@ public class area_and_perimeter {
                 lengthRectangle = userin.nextDouble();
                 System.out.println("Please enter the width of the rectangle:");
                 widthRectangle = userin.nextDouble();
-                System.out.println("The area of this rectangle is " + rectangleArea(lengthRectangle, widthRectangle));
+                System.out.println("The area of this rectangle is " + rectangleArea(lengthRectangle, widthRectangle) + unit);
+                mainMenu();
             }
             case "Square", "square", "b", "B" -> {
                 System.out.println("Please enter the width of the square:");
                 widthSquare = userin.nextDouble();
-                System.out.println("The length of this square is " + squareArea(widthSquare));
+                System.out.println("The length of this square is " + squareArea(widthSquare) + unit);
+                mainMenu();
             }
-            case "Circle", "circle", "c", "C" -> circleArea();
-            case "Triangle", "triangle", "d", "D" -> triangleArea();
+            case "Circle", "circle", "c", "C" -> {
+                System.out.println("Please enter the radius of the circle:");
+                radius = userin.nextDouble();
+                System.out.println("The area of this circle is " + circleArea(radius) + unit);
+                mainMenu();
+            }
+            case "Triangle", "triangle", "d", "D" -> {
+                System.out.println("Please enter the size of the base of the triangle:");
+                baseTriangle = userin.nextDouble();
+                System.out.println("Please enter the size of the height of the triangle:");
+                heightTriangle = userin.nextDouble();
+                System.out.println("The area of this triangle is " + triangleArea(baseTriangle, heightTriangle) + unit);
+            }
             case "Exit", "exit", "e", "E" -> System.exit(0); //exit if user chooses
             default -> {
                 System.out.println("Invalid input, please try again"); //loops area menu if input is invalid
