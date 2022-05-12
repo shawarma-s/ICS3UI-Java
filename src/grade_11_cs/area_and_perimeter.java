@@ -65,7 +65,7 @@ public class area_and_perimeter {
             case "Square", "square", "b", "B" -> {
                 System.out.println("Please enter the width of the square:");
                 widthSquare = userin.nextDouble();
-                System.out.println("The perimeter of this square is " + squarePerimter(widthSquare));
+                System.out.println("The perimeter of this square is " + squarePerimeter(widthSquare));
             }
             case "Circle", "circle", "c", "C" -> {
                 System.out.println("Please enter the radius of the circle:");
@@ -95,9 +95,19 @@ public class area_and_perimeter {
         System.out.println("A) Rectangle\nB) Square\nC) Circle\nD) Triangle\nE) Exit"); //area options
         areaChoice = userin.next();
 
-        switch (areaChoice) {
-            case "Rectangle", "rectangle", "a", "A" -> rectangleArea(); //4 shapes available for area
-            case "Square", "square", "b", "B" -> squareArea();
+        switch (areaChoice) {  //4 shapes available for area
+            case "Rectangle", "rectangle", "a", "A" -> {
+                System.out.println("Please enter the length of the rectangle:");
+                lengthRectangle = userin.nextDouble();
+                System.out.println("Please enter the width of the rectangle:");
+                widthRectangle = userin.nextDouble();
+                System.out.println("The area of this rectangle is " + rectangleArea(lengthRectangle, widthRectangle));
+            }
+            case "Square", "square", "b", "B" -> {
+                System.out.println("Please enter the width of the square:");
+                widthSquare = userin.nextDouble();
+                System.out.println("The length of this square is " + squareArea(widthSquare));
+            }
             case "Circle", "circle", "c", "C" -> circleArea();
             case "Triangle", "triangle", "d", "D" -> triangleArea();
             case "Exit", "exit", "e", "E" -> System.exit(0); //exit if user chooses
@@ -126,12 +136,13 @@ public class area_and_perimeter {
         }
     }
 
+    //below are the functions for the calculations for all possible shape selections
     public static double rectanglePerimeter(double n1, double n2) {
         double rectanglePerimeter = 2*n1+2*n2;
         return rectanglePerimeter;
     }
 
-    public static double squarePerimter(double n1) {
+    public static double squarePerimeter(double n1) {
         double squarePerimeter = n1*4;
         return squarePerimeter;
     }
@@ -147,23 +158,19 @@ public class area_and_perimeter {
     }
 
     public static double rectangleArea(double n1, double n2) {
-        double rectangleArea;
-        return rectangleArea;
+        return n1*n2;
     }
 
     public static double squareArea(double n1) {
-        double squareArea;
-        return squareArea;
+        return n1*n1;
     }
 
     public static double circleArea(double n1) {
-        double circleArea;
-        return circleArea;
+        return PI*(n1*n1);
     }
 
     public static double triangleArea(double n1, double n2) {
-        double triangleArea;
-        return triangleArea;
+        return (n1*n2)/2;
     }
 
     public static double rectanglePrism(double n1, double n2, double n3) {
