@@ -59,7 +59,7 @@ public class area_and_perimeter {
                 lengthRectangle = userin.nextDouble();
                 System.out.println("Please enter the width of the rectangle:");
                 widthRectangle = userin.nextDouble();
-                System.out.println("The area of this rectangle is " + rectanglePerimeter(lengthRectangle, widthRectangle)); //4 options for shape perimeters
+                System.out.println("The area of this rectangle is " + rectanglePerimeter(lengthRectangle, widthRectangle )); //4 options for shape perimeters
             }
             case "Square", "square", "b", "B" -> squarePerimter();
             case "Circle", "circle", "c", "C" -> circlePerimeter();
