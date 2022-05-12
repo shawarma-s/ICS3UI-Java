@@ -12,8 +12,17 @@ public class area_and_perimeter {
     static  String perimeterChoice;
     static  String areaChoice;
     static  String volumeChoice;
-    static  double widthRectangle; //double variables for user defined choices in dimensions used in calculations
-    static  double lengthRectangle;
+    static double widthRectangle; //double variables for user defined choices in dimensions used in calculations
+    static double lengthRectangle;
+    static double heightRectangle;
+    static double widthSquare; //same variable used for square and cube calculations
+    static double radius; //same radius variable used for circle and square
+    static double triangleSideA;
+    static double triagnleSideB;
+    static double triangleSideC;
+    static double baseTriangle;
+    static double heightTriangle;
+    static double lengthTriangle; //used for triangular prism
 
     public static void main(String[] args) {
         mainMenu();
@@ -45,7 +54,13 @@ public class area_and_perimeter {
         perimeterChoice = userin.next();
 
         switch (perimeterChoice) {
-            case "Rectangle", "rectangle", "a", "A" -> rectanglePerimeter(); //4 options for shape perimeters
+            case "Rectangle", "rectangle", "a", "A" -> {
+                System.out.println("Please enter the length of the rectangle:");
+                lengthRectangle = userin.nextDouble();
+                System.out.println("Please enter the width of the rectangle:");
+                widthRectangle = userin.nextDouble();
+                System.out.println("The area of this rectangle is " + rectanglePerimeter(lengthRectangle, widthRectangle)); //4 options for shape perimeters
+            }
             case "Square", "square", "b", "B" -> squarePerimter();
             case "Circle", "circle", "c", "C" -> circlePerimeter();
             case "Triangle", "triangle", "d", "D" -> trianglePerimeter();
@@ -94,64 +109,64 @@ public class area_and_perimeter {
         }
     }
 
-    public static double rectanglePerimeter() {
-
-        return 0;
+    public static double rectanglePerimeter(double n1, double n2) {
+        double rectanglePerimeter = 2*n1+1*n2;
+        return rectanglePerimeter;
     }
 
     public static double squarePerimter() {
-
-        return 0;
+        double squarePerimeter;
+        return squarePerimeter;
     }
 
-    public static double circlePerimeter() {
-
-        return 0;
+    public static double circlePerimeter() { //aka circumference
+        double circlePerimeter;
+        return circlePerimeter;
     }
 
     public static double trianglePerimeter() {
-
-        return 0;
+        double trianglePerimeter;
+        return trianglePerimeter;
     }
 
     public static double rectangleArea() {
-
-        return 0;
+        double rectangleArea;
+        return rectangleArea;
     }
 
     public static double squareArea() {
-
-        return 0;
+        double squareArea;
+        return squareArea;
     }
 
     public static double circleArea() {
-
-        return 0;
+        double circleArea;
+        return circleArea;
     }
 
     public static double triangleArea() {
-
-        return 0;
+        double triangleArea;
+        return triangleArea;
     }
 
     public static double rectanglePrism() {
-
-        return 0;
+        double rectanglePrism;
+        return rectanglePrism;
     }
 
     public static double cube() {
-
-        return 0;
+        double cube;
+        return cube;
     }
 
     public static double sphere() {
-
-        return 0;
+        double sphere;
+        return sphere;
     }
 
     public static double trianglePrism() {
-
-        return 0;
+        double trianglePrism;
+        return trianglePrism;
     }
 
 }
