@@ -124,9 +124,9 @@ public class area_and_perimeter {
                 mainMenu();
             }
             case "Triangle", "triangle", "d", "D" -> {
-                System.out.println("Please enter the size of the base of the triangle:");
+                System.out.println("Please enter the base of the triangle:");
                 baseTriangle = userin.nextDouble();
-                System.out.println("Please enter the size of the height of the triangle:");
+                System.out.println("Please enter the height of the triangle:");
                 heightTriangle = userin.nextDouble();
                 System.out.println("The area of this triangle is " + triangleArea(baseTriangle, heightTriangle) + unit);
                 mainMenu();
@@ -168,9 +168,9 @@ public class area_and_perimeter {
                 mainMenu();
             }
             case "Triangular Prism", "triangular prism", "d", "D" -> {
-                System.out.println("Please enter the size of the base of the triangle face of the triangular prism:");
+                System.out.println("Please enter the base of the triangle face of the triangular prism:");
                 baseTriangle = userin.nextDouble();
-                System.out.println("Please enter the size of the height of the triangle face of the triangular prism:");
+                System.out.println("Please enter the height of the triangle face of the triangular prism:");
                 heightTriangle = userin.nextDouble();
                 System.out.println("Please enter the length of the triangular prism:");
                 lengthTriangle = userin.nextDouble();
