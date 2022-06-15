@@ -1,20 +1,27 @@
 package grade_11_cs;
-import java.util.Scanner;
+
 public class tests {
-    public static String determineAns (int n1, int n2)
-    {
-        if ((n1 + n2) == 15)
-        {return "MAYBE";}
-        else if ((n1 + n2) > 15)
-        {return "YES";}
-        else
-        {return "NO";}
-    }
     public static void main(String[] args) {
+        int result = 0;
+        int num = 0;
 
-        int val1 = 6;
-        int val2 = 8;
-
-        System.out.println(determineAns (val2, val2));
+        while (true) {
+            int temp_sum = fib(num);
+            if (temp_sum < 4000000) {
+                if (temp_sum % 2 == 0) {
+                    result+=temp_sum;
+                    System.out.println(result);
+                }
+            }
+            else {break;}
+            num++;
+        }
+        System.out.println(result);
+    }
+    public static int fib(int i) {
+        if (i<2) {
+            return i;
+        }
+        return fib(i-1) + fib(i-2);
     }
 }
